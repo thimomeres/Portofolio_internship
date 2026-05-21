@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Timo Baware Meres — Informatics Student, AI & Web Developer. Portfolio showcasing projects, skills, and experience."
+    />
+    <title>Timo Baware Meres | AI & Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#0a0e17",
+              panel: "#111827",
+              accent: "#6366f1",
+              glow: "#818cf8",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body
+    class="bg-surface text-slate-200 font-sans antialiased overflow-x-hidden"
+  >
+    <!-- Loading Screen -->
+    <div id="loader" class="loader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-ring"></div>
+        <div class="loader-ring loader-ring--delay"></div>
+        <p class="loader-text font-display">
+          Timo<span class="loader-dot">.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-effects" aria-hidden="true">
+      <div class="bg-gradient"></div>
+      <div class="bg-grid"></div>
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+      <div class="bg-orb bg-orb--3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header
+      id="navbar"
+      class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+    >
+      <nav
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+      >
+        <a
+          href="#hero"
+          class="navbar-logo font-display text-lg font-semibold text-white tracking-tight"
+        >
+          T<span class="text-accent">.</span>Meres
+        </a>
+        <button
+          id="nav-toggle"
+          class="nav-toggle lg:hidden w-10 h-10 flex items-center justify-center rounded-lg glass"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars text-slate-300"></i>
+        </button>
+        <ul id="nav-menu" class="nav-menu hidden lg:flex items-center gap-1">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certs</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <a
+              href="assets/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Timo_Baware_Meres_CV.pdf"
+              class="nav-link nav-link--cv"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav-cta ml-2 px-4 py-2 rounded-full text-sm font-medium"
+              >Hire Me</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div id="mobile-menu" class="mobile-menu hidden lg:hidden">
+        <ul class="flex flex-col gap-1 p-4">
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#education" class="mobile-nav-link">Education</a></li>
+          <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+          <li>
+            <a href="#certifications" class="mobile-nav-link">Certifications</a>
+          </li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+          <li>
+            <a
+              href="assets/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Timo_Baware_Meres_CV.pdf"
+              class="mobile-nav-link"
+              >Download CV</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section
+        id="hero"
+        class="hero min-h-screen flex items-center relative pt-24 pb-16"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="hero-content reveal">
+              <p
+                class="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium text-accent mb-6"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+                ></span>
+                Available for internships
+              </p>
+              <h1
+                class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+              >
+                Timo Baware <span class="gradient-text">Meres</span>
+              </h1>
+              <p class="text-lg sm:text-xl text-slate-400 font-medium mb-4">
+                Informatics Student | AI & Web Developer
+              </p>
+              <p class="text-slate-400 leading-relaxed max-w-xl mb-8">
+                I build intelligent web applications and AI-powered solutions —
+                turning complex ideas into elegant, functional digital
+                experiences for users and businesses alike.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="#projects" class="btn btn-primary">
+                  <i class="fa-solid fa-folder-open"></i>
+                  View Projects
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                  <i class="fa-solid fa-envelope"></i>
+                  Contact Me
+                </a>
+                <a
+                  href="assets/CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Timo_Baware_Meres_CV.pdf"
+                  class="btn btn-cv"
+                >
+                  <i class="fa-solid fa-file-pdf"></i>
+                  Download CV
+                </a>
+              </div>
+              <div class="flex gap-6 mt-10 text-sm text-slate-500">
+                <div>
+                  <span class="text-white font-semibold text-2xl font-display"
+                    >5+</span
+                  ><br />Projects
+                </div>
+                <div class="w-px bg-slate-700"></div>
+                <div>
+                  <span class="text-white font-semibold text-2xl font-display"
+                    >AI</span
+                  ><br />Focus
+                </div>
+                <div class="w-px bg-slate-700"></div>
+                <div>
+                  <span class="text-white font-semibold text-2xl font-display"
+                    >Web</span
+                  ><br />Dev
+                </div>
+              </div>
+            </div>
+            <div
+              class="hero-image reveal reveal-delay-2 flex justify-center lg:justify-end"
+            >
+              <div class="profile-frame relative">
+                <div class="profile-glow"></div>
+                <div
+                  class="profile-card glass rounded-2xl p-2 aspect-square max-w-sm w-full mx-auto"
+                >
+                  <img
+                    src="assets/profile.png"
+                    alt="Timo Baware Meres — Informatics Student and AI & Web Developer"
+                    class="profile-photo w-full h-full rounded-xl object-cover"
+                    width="400"
+                    height="400"
+                    loading="eager"
+                  />
+                </div>
+                <div
+                  class="floating-badge floating-badge--1 glass px-3 py-2 rounded-lg text-xs"
+                >
+                  <i class="fa-brands fa-laravel text-red-400"></i> Laravel
+                </div>
+                <div
+                  class="floating-badge floating-badge--2 glass px-3 py-2 rounded-lg text-xs"
+                >
+                  <i class="fa-solid fa-brain text-violet-400"></i> AI / NLP
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title font-display">Who I Am</h2>
+          </div>
+          <div class="grid lg:grid-cols-5 gap-10 items-center mt-12">
+            <div class="lg:col-span-2 reveal">
+              <div
+                class="about-visual glass rounded-2xl p-2 max-w-xs w-full mx-auto lg:mx-0 overflow-hidden"
+              >
+                <img
+                  src="assets/about.png"
+                  alt="Timo Baware Meres outdoors at sunset"
+                  class="about-photo w-full rounded-xl object-cover"
+                  width="320"
+                  height="400"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="lg:col-span-3 reveal reveal-delay-1">
+              <p class="text-slate-300 leading-relaxed text-lg">
+                Hi, I'm Timo, an Informatics student who loves building creative
+                and interactive digital experiences. I have a strong passion for
+                Web Development, especially backend development using Laravel,
+                while also enjoying exploring modern technologies like AI and
+                game development with Unity. I enjoy turning ideas into
+                functional and engaging applications through coding and
+                problem-solving.
+              </p>
+              <div class="flex flex-wrap gap-3 mt-8">
+                <span class="tag">Problem Solver</span>
+                <span class="tag">Backend Focus</span>
+                <span class="tag">AI Enthusiast</span>
+                <span class="tag">Game Dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section py-20 sm:py-28 bg-panel/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <span class="section-label">Education</span>
+            <h2 class="section-title font-display">Academic Journey</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+            <div class="edu-card glass rounded-2xl p-8 reveal hover-lift">
+              <div
+                class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6"
+              >
+                <i class="fa-solid fa-graduation-cap text-accent text-xl"></i>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-white mb-2">
+                Bachelor of Informatics
+              </h3>
+              <p class="text-accent font-medium mb-1">Klabat University</p>
+              <p class="text-slate-500 text-sm">2023 – Present</p>
+              <div class="mt-6 h-1 rounded-full bg-slate-800 overflow-hidden">
+                <div
+                  class="h-full w-2/3 bg-gradient-to-r from-accent to-violet-500 rounded-full"
+                ></div>
+              </div>
+              <p class="text-xs text-slate-500 mt-2">
+                Currently pursuing degree
+              </p>
+            </div>
+            <div
+              class="edu-card glass rounded-2xl p-8 reveal reveal-delay-1 hover-lift"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-6"
+              >
+                <i class="fa-solid fa-lightbulb text-violet-400 text-xl"></i>
+              </div>
+              <h3 class="font-display text-xl font-semibold text-white mb-6">
+                Areas of Interest
+              </h3>
+              <ul class="space-y-4">
+                <li class="interest-item">
+                  <i class="fa-solid fa-robot text-accent"></i>
+                  <span>Artificial Intelligence</span>
+                </li>
+                <li class="interest-item">
+                  <i class="fa-solid fa-comments text-violet-400"></i>
+                  <span>Large Language Models (LLM)</span>
+                </li>
+                <li class="interest-item">
+                  <i class="fa-solid fa-globe text-emerald-400"></i>
+                  <span>Web Development</span>
+                </li>
+                <li class="interest-item">
+                  <i class="fa-solid fa-microchip text-amber-400"></i>
+                  <span>AI Application Development</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <span class="section-label">Technical Skills</span>
+            <h2 class="section-title font-display">Tools & Technologies</h2>
+          </div>
+          <div
+            id="skills-grid"
+            class="skills-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-12"
+          >
+            <!-- Populated by JS or static -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section py-20 sm:py-28 bg-panel/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title font-display">Featured Projects</h2>
+          </div>
+          <div id="projects-grid" class="grid md:grid-cols-2 gap-8 mt-12">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certifications" class="section py-20 sm:py-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <h2 class="section-title font-display">Certifications</h2>
+          </div>
+          <div class="max-w-4xl mx-auto mt-12 reveal">
+            <article
+              class="cert-card glass rounded-2xl overflow-hidden hover-lift relative"
+            >
+              <div class="cert-shine"></div>
+              <div class="grid md:grid-cols-2 gap-0">
+                <a
+                  href="assets/certificate.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cert-image-wrap group block p-4 md:p-6 bg-slate-900/40"
+                  aria-label="View full certificate"
+                >
+                  <img
+                    src="assets/certificate.png"
+                    alt="Eduwork Certificate of Achievement — Fullstack Web Programming Bootcamp Batch 7"
+                    class="cert-image w-full rounded-xl border border-slate-700/50 shadow-lg"
+                    loading="lazy"
+                  />
+                  <span class="cert-image-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                    View Full Certificate
+                  </span>
+                </a>
+                <div class="p-6 md:p-8 flex flex-col justify-center">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div
+                      class="cert-icon w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center shrink-0"
+                    >
+                      <i class="fa-solid fa-award text-orange-400 text-xl"></i>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-slate-500 uppercase tracking-wider"
+                      >
+                        Verified Certificate
+                      </p>
+                      <p class="text-accent text-sm font-medium">Eduwork.id</p>
+                    </div>
+                  </div>
+                  <h3
+                    class="font-display text-xl font-semibold text-white mb-2 leading-snug"
+                  >
+                    Fullstack Web Programming Bootcamp — Batch 7
+                  </h3>
+                  <p class="text-slate-400 text-sm mb-4">
+                    Skill Mastery Program · Feb 2026 – Apr 2026
+                  </p>
+                  <ul class="space-y-2 text-slate-400 text-sm mb-5">
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fa-solid fa-check text-emerald-400 mt-1 text-xs"
+                      ></i>
+                      Completed fullstack web development bootcamp from
+                      fundamentals to mastery
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fa-solid fa-check text-emerald-400 mt-1 text-xs"
+                      ></i>
+                      Laravel backend development, authentication, database
+                      management & REST APIs
+                    </li>
+                  </ul>
+                  <div
+                    class="flex flex-wrap items-center gap-3 text-xs text-slate-500"
+                  >
+                    <span class="cert-id glass px-3 py-1.5 rounded-full">
+                      <i class="fa-solid fa-fingerprint text-accent mr-1"></i>
+                      ID: 149596-2915
+                    </span>
+                    <span>Issued May 21, 2026</span>
+                  </div>
+                  <a
+                    href="assets/certificate.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-btn mt-5 inline-flex items-center gap-2 text-sm font-medium text-white"
+                  >
+                    <i class="fa-solid fa-certificate"></i>
+                    View Certificate
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section py-20 sm:py-28 bg-panel/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-header reveal">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title font-display">Contact Me</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <a
+              href="mailto:thimomeres@gmail.com"
+              class="contact-card glass rounded-2xl p-6 reveal hover-lift group text-center"
+            >
+              <div class="contact-icon mx-auto mb-4">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3 class="font-medium text-white mb-1">Email</h3>
+              <p
+                class="text-sm text-slate-400 group-hover:text-accent transition-colors"
+              >
+                thimomeres@gmail.com
+              </p>
+            </a>
+            <a
+              href="https://github.com/thimomeres"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card glass rounded-2xl p-6 reveal reveal-delay-1 hover-lift group text-center"
+            >
+              <div class="contact-icon mx-auto mb-4">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <h3 class="font-medium text-white mb-1">GitHub</h3>
+              <p
+                class="text-sm text-slate-400 group-hover:text-accent transition-colors"
+              >
+                github.com/thimomeres
+              </p>
+            </a>
+            <a
+              href="tel:+6285274947024"
+              class="contact-card glass rounded-2xl p-6 reveal reveal-delay-2 hover-lift group text-center"
+            >
+              <div class="contact-icon mx-auto mb-4">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3 class="font-medium text-white mb-1">Phone</h3>
+              <p
+                class="text-sm text-slate-400 group-hover:text-accent transition-colors"
+              >
+                +62 852 7494 7024
+              </p>
+            </a>
+            <a
+              href="assets/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Timo_Baware_Meres_CV.pdf"
+              class="contact-card glass rounded-2xl p-6 reveal reveal-delay-3 hover-lift group text-center"
+            >
+              <div class="contact-icon contact-icon--cv mx-auto mb-4">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <h3 class="font-medium text-white mb-1">Resume / CV</h3>
+              <p
+                class="text-sm text-slate-400 group-hover:text-red-400 transition-colors"
+              >
+                Download PDF
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Media -->
+      <section id="social" class="section py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            class="font-display text-2xl font-semibold text-white mb-2 reveal"
+          >
+            Connect With Me
+          </h2>
+          <p class="text-slate-500 mb-10 reveal">
+            Follow my journey across platforms
+          </p>
+          <div class="flex justify-center gap-6 flex-wrap reveal">
+            <a
+              href="https://www.instagram.com/thimo_kyre/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="social-icon social-icon--placeholder"
+              aria-label="Twitter / X (coming soon)"
+              title="Coming soon"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/@thimomeres4001"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="YouTube"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer border-t border-slate-800/50 py-8">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500"
+      >
+        <p>
+          Designed & Developed by
+          <span class="text-slate-300">Timo Baware Meres</span>
+        </p>
+        <p class="text-xs">
+          &copy; <span id="year"></span> All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
